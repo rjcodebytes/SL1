@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sort Numbers and Alphabets</title>
+</head>
+<body>
+<h2>Sort Numbers and Alphabets</h2>
+<label for="numbers">Enter numbers separated by commas:</label>
+<input type="text" id="numbersInput"><br>
+<label for="alphabets">Enter alphabets separated by commas:</label>
+<input type="text" id="alphabetsInput"><br>
+<button onclick="sortInputs()">Sort</button><br><br>
+<h3>Sorted Numbers:</h3>
+<div id="sortedNumbers"></div><br>
+<h3>Sorted Alphabets:</h3>
+<div id="sortedAlphabets"></div>
+<script>
+function sortInputs() {
+const numbersInput = document.getElementById("numbersInput").value;
+const alphabetsInput = document.getElementById("alphabetsInput").value;
+const sortedNumbers = numbersInput.split(',').map(Number).sort((a, b) =>
+a - b);
+const sortedAlphabets = alphabetsInput.split(',').sort();
+document.getElementById("sortedNumbers").innerText =
+sortedNumbers.join(', ');
+document.getElementById("sortedAlphabets").innerText =
+sortedAlphabets.join(', ');
+}
+</script>
+</body>
+</html>
